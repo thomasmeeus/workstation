@@ -8,6 +8,6 @@
 #
 
 homesick_castle 'dotfiles' do
-  user    'thomas'
+  user    'admin'
   source  'git@github.com:thomasmeeus/dotfiles.git'
 end
