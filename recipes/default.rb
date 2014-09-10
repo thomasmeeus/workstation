@@ -8,10 +8,9 @@
 #
 
 execute 'chown /usr/local/bin' do
-    command 'chown -R `whoami`:staff /usr/local'
-    user 'root'
+    command "sudo chown -R #{node['current_user']}:staff /usr/local"
 end
-
+homebrew_tap 'homebrew/dupes'
 homebrew_tap 'caskroom/cask'
 
 %w{
@@ -43,6 +42,7 @@ homebrew_tap 'caskroom/cask'
     watch
     wget
     xmlstarlet
+    php55
     composer
     brew-cask
 }.each do |package|
