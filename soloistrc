@@ -1,0 +1,4 @@
+cookbook_paths:
+- /opt/workstation/vendor/cookbooks
+recipes:
+- workstation::default
