@@ -2,6 +2,7 @@
 
 sudo -v
 sudo softwareupdate -i -a
+sudo gem install bundler
 sudo bundle install
 
 cat > soloistrc <<EOF
