@@ -9,6 +9,6 @@ sudo mkdir /opt
 sudo chown $USER:staff /opt
 git clone https://github.com/thomasmeeus/workstation.git /opt
 cd /opt
-sudo bundle install
+bundle install
 bundle exec berks install --path vendor/cookbooks
 bundle exec soloist
