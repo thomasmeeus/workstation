@@ -33,6 +33,7 @@ homebrew_tap 'caskroom/cask'
     libtool
     libyaml
     mutt
+    mysql
     nmap
     openssl
     pv
