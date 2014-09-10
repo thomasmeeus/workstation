@@ -7,10 +7,15 @@
 # All rights reserved - Do Not Redistribute
 #
 
-execute 'chown /usr/local/bin' do
-    command "sudo chown -R #{node['current_user']}:staff /usr/local"
-end
+#execute 'chown /usr/local/bin' do
+#    command "sudo chown -R #{node['current_user']}:staff /usr/local"
+#end
+
+include_recipe 'homebrew::default'
+
 homebrew_tap 'homebrew/dupes'
+homebrew_tap 'homebrew/versions'
+homebrew_tap 'homebrew/homebrew-php'
 homebrew_tap 'caskroom/cask'
 
 %w{
