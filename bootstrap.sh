@@ -16,5 +16,6 @@ fi
 cd /opt/workstation
 git pull
 bundle install --path vendor/bundle
+rm -rf /opt/workstation/vendor/cookbooks
 bundle exec berks vendor vendor/cookbooks
 bundle exec soloist
