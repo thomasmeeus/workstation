@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo -v
+sudo softwareupdate -i -a
 sudo bundle install
 
 cat > soloistrc <<EOF
