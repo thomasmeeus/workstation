@@ -5,17 +5,15 @@ sudo -v
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 sudo softwareupdate -i -a
 sudo gem install bundler
-sudo mkdir /opt
-sudo chown $USER:staff /opt
 
-if [ ! -e /opt/workstation ]
+if [ ! -e ~/.workstation ]
 then
-    git clone https://github.com/thomasmeeus/workstation.git /opt/workstation
+    git clone https://github.com/thomasmeeus/workstation.git ~/.workstation
 fi
 
-cd /opt/workstation
+cd ~/.workstation
 git pull
 bundle install --path vendor/bundle
-rm -rf /opt/workstation/vendor/cookbooks
+rm -rf ~/.workstation/vendor/cookbooks
 bundle exec berks vendor vendor/cookbooks
 bundle exec soloist
