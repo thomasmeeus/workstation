@@ -90,7 +90,10 @@ homesick_castle 'dotfiles' do
   user node['current_user']
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
-
+homesick_castle 'dotfiles' do
+  user "root"
+  source 'git@github.com:thomasmeeus/dotfiles.git'
+end
 include_recipe "osxdefaults::dock_automatically_hide_and_show_the_dock"
 include_recipe "osxdefaults::dock_enable_spring_loading_for_all_dock_items"
 include_recipe "osxdefaults::dock_minimize_to_application"
