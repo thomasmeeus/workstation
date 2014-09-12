@@ -11,12 +11,12 @@ directory '/opt/homebrew-cask/Caskroom' do
   action :create
   recursive true
   mode '0755'
-  owner node['homebrew_owner']
+  owner  node['current_user']
   group 'staff'
 end
 
 directory '/opt/homebrew-cask' do
-  owner node['homebrew_owner']
+  owner node['current_user']
 end
 
 include_recipe 'homebrew::default'
@@ -85,8 +85,8 @@ end
 end
 
 homesick_castle 'dotfiles' do
-  user    'admin'
-  source  'git@github.com:thomasmeeus/dotfiles.git'
+  user node['current_user']
+  source 'git@github.com:thomasmeeus/dotfiles.git'
 end
 
 
