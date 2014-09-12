@@ -7,9 +7,17 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#execute 'chown /usr/local/bin' do
-#    command "sudo chown -R #{node['current_user']}:staff /usr/local"
-#end
+directory '/opt/homebrew-cask/Caskroom' do
+  action :create
+  recursive true
+  mode '0755'
+  owner node['homebrew_owner']
+  group 'staff'
+end
+
+directory '/opt/homebrew-cask' do
+  owner node['homebrew_owner']
+end
 
 include_recipe 'homebrew::default'
 
