@@ -91,9 +91,10 @@ homesick_castle 'dotfiles' do
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
 homesick_castle 'dotfiles' do
-  user "root"
+  user 'root'
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
+
 include_recipe "osxdefaults::dock_automatically_hide_and_show_the_dock"
 include_recipe "osxdefaults::dock_enable_spring_loading_for_all_dock_items"
 include_recipe "osxdefaults::dock_minimize_to_application"
@@ -126,5 +127,4 @@ include_recipe "osxdefaults::prevent_time_machine_from_prompting_to_use_new_hard
 include_recipe "osxdefaults::set_a_blazingly_fast_keyboard_repeat_rate"
 include_recipe "osxdefaults::set_screensaver_preferences"
 include_recipe "osxdefaults::tap_to_click"
-include_recipe "osxdefaults::set_terminal_profile"
 include_recipe "osxdefaults::terminal_preferences"
