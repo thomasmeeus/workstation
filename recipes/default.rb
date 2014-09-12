@@ -20,6 +20,7 @@ directory '/opt/homebrew-cask' do
 end
 
 include_recipe 'homebrew::default'
+include_recipe 'homesick::default'
 
 homebrew_tap 'homebrew/dupes'
 homebrew_tap 'homebrew/versions'
