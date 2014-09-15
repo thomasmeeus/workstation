@@ -1,2 +1,2 @@
 node.default['osxdefaults']['computername'] = 'KM-0334'
-node.default['terminal']['color_scheme'] = 'Solarized-Dark-ansi'
+node.default['osxdefaults']['terminal']['profile'] = 'Solarized-Dark-ansi'
