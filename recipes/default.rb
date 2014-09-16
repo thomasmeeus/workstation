@@ -89,9 +89,11 @@ end
 
 directory "/Users/#{node['current_user']}/.homesick/repos/dotfiles/home" do
     action 'create'
+    recursive true
 end
 directory '/var/root/.homesick/repos/dotfiles/home' do
     action 'create'
+    recursive true
 end
 
 homesick_castle 'dotfiles' do
