@@ -87,10 +87,8 @@ end
 end
 
 
-directory "/Users/#{node['current_user']}/.homesick/repos/dotfiles/home" do
-    action 'create'
-    recursive true
-end
+
+## fix for the root-user
 directory '/var/root/.homesick/repos/dotfiles/home' do
     action 'create'
     recursive true
@@ -98,10 +96,12 @@ end
 
 homesick_castle 'dotfiles' do
   user node['current_user']
+  action 'update'
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
 homesick_castle 'dotfiles' do
   user 'root'
+  action 'update'
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
 
