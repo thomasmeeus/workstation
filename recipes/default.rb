@@ -87,7 +87,7 @@ end
 end
 
 
-directory "/Users#{node['current_user']}/.homesick/repos/dotfiles/home" do
+directory "/Users/#{node['current_user']}/.homesick/repos/dotfiles/home" do
     action 'create'
 end
 directory '/var/root/.homesick/repos/dotfiles/home' do
