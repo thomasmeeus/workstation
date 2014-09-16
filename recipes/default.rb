@@ -86,6 +86,14 @@ end
     end
 end
 
+
+directory "/Users#{node['current_user']}/.homesick/repos/dotfiles/home" do
+    action 'create'
+end
+directory '/var/root/.homesick/repos/dotfiles/home' do
+    action 'create'
+end
+
 homesick_castle 'dotfiles' do
   user node['current_user']
   source 'git@github.com:thomasmeeus/dotfiles.git'
