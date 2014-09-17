@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #
 # Cookbook Name:: workstation
 # Recipe:: default
@@ -70,7 +71,7 @@ homebrew_tap 'caskroom/cask'
 end
 
 package 'mutt' do
-  options '–-trash-patch -–with-s-lang'
+  options '--trash-patch --with-s-lang'
 end
 
 %w{
