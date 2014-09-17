@@ -89,6 +89,7 @@ end
     wireshark
     cord
     lastpass-universal
+    codebox
 }.each do |package|
     homebrew_cask package do
         action :install
