@@ -123,16 +123,6 @@ osxdefaults_defaults "Dock: Set magnification level" do
 end
 
 
-template "#{Chef::Config[:file_cache_path]}/#{node['osxdefaults']['terminal']['backup_profile']}.terminal" do
-    source "#{node['osxdefaults']['terminal']['backup_profile']}.terminal"
-    owner node['current_user']
-    mode "0755"
-end
-
-execute "Load the terminal backup_profile" do
-    command "open #{Chef::Config[:file_cache_path]}/#{node["osxdefaults"]["terminal"]["backup_profile"]}.terminal"
-end
-
 include_recipe 'osxdefaults::dock_automatically_hide_and_show_the_dock'
 include_recipe 'osxdefaults::dock_enable_spring_loading_for_all_dock_items'
 include_recipe 'osxdefaults::dock_minimize_to_application'
@@ -168,6 +158,6 @@ include_recipe 'osxdefaults::set_terminal_profile'
 
 
 
-include_recipe ''sprout-osx-apps::sublime_text'
+include_recipe 'sprout-osx-apps::sublime_text'
 
 
