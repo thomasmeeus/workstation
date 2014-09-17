@@ -168,6 +168,6 @@ include_recipe 'osxdefaults::set_terminal_profile'
 
 
 
-include_recipe 'workstation::sublime_text_3'
+include_recipe 'osx-apps::sublime_text'
 
 
