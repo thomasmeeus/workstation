@@ -70,7 +70,7 @@ homebrew_tap 'caskroom/cask'
 end
 
 package 'mutt' do
-  options '–-trash-patch -–with-slang'
+  options '–-trash-patch -–with-s-lang'
 end
 
 %w{
