@@ -19,10 +19,6 @@ directory '/opt/homebrew-cask' do
   owner node['current_user']
 end
 
-link '/var/root' do
-  to '/root'
-end
-
 include_recipe 'homebrew::default'
 include_recipe 'homesick::default'
 
@@ -51,7 +47,6 @@ homebrew_tap 'caskroom/cask'
     iftop
     libtool
     libyaml
-    mutt
     mysql
     nmap
     openssl
@@ -65,18 +60,25 @@ homebrew_tap 'caskroom/cask'
     php55
     composer
     brew-cask
+    slang
+    urlview
+    lynx
 }.each do |package|
     package package do
         action :install
     end
 end
 
+package 'mutt' do
+  options '–-trash-patch -–with-slang'
+end
+
 %w{
     vmware-fusion
     virtualbox
     vagrant
+    dropbox
     limechat
-    sublime-text
     bettertouchtool
     cyberduck
     flux
@@ -84,6 +86,7 @@ end
     keyboardcleantool
     vlc
     wireshark
+    cord
 }.each do |package|
     homebrew_cask package do
         action :install
@@ -99,6 +102,37 @@ homesick_castle 'dotfiles' do
   source 'git@github.com:thomasmeeus/dotfiles.git'
 end
 
+
+
+osxdefaults_defaults "Set the icon size of Dock items to 36 pixels" do
+  domain 'com.apple.dock'
+  key 'tilesize'
+  integer 20
+end
+
+osxdefaults_defaults "Dock: Set magnification on" do
+  domain 'com.apple.dock'
+  key 'magnification'
+  integer 1
+end
+
+osxdefaults_defaults "Dock: Set magnification level" do
+  domain 'com.apple.dock'
+  key 'magnification'
+  float 35.0
+end
+
+
+template "#{Chef::Config[:file_cache_path]}/#{node['osxdefaults']['terminal']['backup_profile']}.terminal" do
+    source "#{node['osxdefaults']['terminal']['backup_profile']}.terminal"
+    owner node['current_user']
+    mode "0755"
+end
+
+execute "Load the terminal backup_profile" do
+    command "open #{Chef::Config[:file_cache_path]}/#{node["osxdefaults"]["terminal"]["backup_profile"]}.terminal"
+end
+
 include_recipe 'osxdefaults::dock_automatically_hide_and_show_the_dock'
 include_recipe 'osxdefaults::dock_enable_spring_loading_for_all_dock_items'
 include_recipe 'osxdefaults::dock_minimize_to_application'
@@ -107,7 +141,6 @@ include_recipe 'osxdefaults::menu_show_clock_with_date'
 include_recipe 'osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail'
 include_recipe 'osxdefaults::set_computer_name'
 include_recipe 'osxdefaults::dock_set_the_icon_size_of_dock_items_to_36_pixels'
-include_recipe 'osxdefaults::dock_set_magnification_on'
 include_recipe 'osxdefaults::enable_safari_debug_menu'
 include_recipe 'osxdefaults::enable_assistive_devices'
 include_recipe 'osxdefaults::add_a_context_menu_item_for_showing_the_web_inspector_in_web_views'
@@ -132,3 +165,9 @@ include_recipe 'osxdefaults::set_a_blazingly_fast_keyboard_repeat_rate'
 include_recipe 'osxdefaults::set_screensaver_preferences'
 include_recipe 'osxdefaults::tap_to_click'
 include_recipe 'osxdefaults::set_terminal_profile'
+
+
+
+include_recipe 'applications::sublime_text'
+
+
