@@ -168,6 +168,6 @@ include_recipe 'osxdefaults::set_terminal_profile'
 
 
 
-include_recipe 'osx-apps::sublime_text'
+include_recipe ''sprout-osx-apps::sublime_text'
 
 
