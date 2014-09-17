@@ -97,6 +97,8 @@ end
 
 
 gem_package 'homesick'
+gem_package 'test-kitchen'
+gem_package 'foodcritic'
 
 homesick_castle 'dotfiles' do
   user node['current_user']
