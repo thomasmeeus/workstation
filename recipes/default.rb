@@ -130,6 +130,7 @@ end
 include_recipe 'osxdefaults::dock_automatically_hide_and_show_the_dock'
 include_recipe 'osxdefaults::dock_enable_spring_loading_for_all_dock_items'
 include_recipe 'osxdefaults::dock_minimize_to_application'
+include_recipe 'osxdefaults::enable_standard_function_keys'
 include_recipe 'osxdefaults::dock_show_indicator_lights_for_open_applications_in_the_dock'
 include_recipe 'osxdefaults::menu_show_clock_with_date'
 include_recipe 'osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail'
