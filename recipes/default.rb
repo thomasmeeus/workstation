@@ -142,6 +142,8 @@ include_recipe 'osxdefaults::add_a_context_menu_item_for_showing_the_web_inspect
 include_recipe 'osxdefaults::avoid_creating_ds_store_files_on_network_volumes'
 include_recipe 'osxdefaults::disable_auto-correct'
 include_recipe 'osxdefaults::disable_gatekeeper'
+include_recipe 'osxdefaults::menu_add_battery_percentage'
+include_recipe 'osxdefaults::menu_show_clock_with_date'
 include_recipe 'osxdefaults::disable_natural_scrolling'
 include_recipe 'osxdefaults::disable_resume_system-wide'
 include_recipe 'osxdefaults::enable_time_machine_on_unsupported_volumes'
