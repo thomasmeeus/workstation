@@ -88,6 +88,7 @@ end
     vlc
     wireshark
     cord
+    lastpass-universal
 }.each do |package|
     homebrew_cask package do
         action :install
